@@ -1,0 +1,15 @@
+create table pracownicy(
+id_pracownicy int PRIMARY KEY auto_increment,
+imie varchar(40) not null,
+nazwisko varchar(60) not null,
+data_urodzenia date not null
+)
+insert into pracownicy (imie,nazwisko,data_urodzenia)
+value 
+('Nikodem','Ogorzałek', '1970-06-20'),
+('Antoni','Berdzik', '1997-11-11'),
+('Jan','Szczypior', '2005-01-08');
+
+update pracownicy
+set data_urodzenia='2005-11-09'
+where id_pracownicy=3;

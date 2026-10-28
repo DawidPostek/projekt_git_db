@@ -1,0 +1,17 @@
+create table zadanie(
+id_zadania int PRIMARY KEY auto_increment,
+nazwa_zadania varchar(150) not null,
+priorytet enum('normalny','wysoki','niski'),
+opis longtext,
+id_pracownicy int,
+foreign key (id_pracownicy) references pracownicy(id_pracownicy) on delete set null 
+);
+
+alter table zadanie 
+alter column priorytet set default "normalny";
+
+insert into zadanie
+value
+(1,'cos','normalny','cos',1),
+(2,'cos2','niski','cos2',2),
+(3,'cos3','wysoki','cos3',3);

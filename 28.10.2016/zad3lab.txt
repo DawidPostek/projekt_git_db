@@ -1,0 +1,28 @@
+create table projekt(
+id_projekt int PRIMARY KEY auto_increment,
+nazwa_projektu varchar(150) not null,
+data_rozpoczecia date not null,
+data_zakonczenia date
+)
+
+alter table projekt
+add menadzer_projektu int,
+add foreign key (menadzer_projektu) references pracownicy(id_pracownicy) on delete set null;
+
+insert into projekt
+value
+(1,'cos','2012-06-12','2012-08-16',1),
+(2,'cos2','2015-07-12','2016-01-20',2);
+
+alter table zadanie
+add id_projekt int,
+add foreign key (id_projekt) references projekt(id_projekt) on delete set null;
+
+update zadanie
+set id_projekt=1
+where id_zadania=1
+
+update zadanie
+set id_projekt=2
+where id_zadania=2
+
